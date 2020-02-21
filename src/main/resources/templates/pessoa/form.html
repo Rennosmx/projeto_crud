@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org" 
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+	<head>		
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>Pessoa</title>
+	</head>
+	
+	<body>
+									
+		<div>
+			<h1>Pessoa</h1>
+		</div>			
+	
+		
+		<div>		
+			
+			<form method="POST" class="row" th:object="${pessoa}" th:action="@{/pessoa/salvar}" >
+			
+				<input type="hidden" th:field="*{id}"/>
+			
+				<div>
+				
+					<label  for="nome"><b>Nome</b></label>
+					<br>
+					<input  type="text" th:field="*{nome}" required />
+					<br><br>
+					
+					<label for=""><b>Idade</b></label>
+					<br>
+					<input  type="text" th:field="*{idade}" required />
+					<br><br>
+					
+				
+					<label for=""><b>CPF</b></label>
+					<br>
+					<input  type="text" th:field="*{cpf}" required />
+					<br><br>
+					
+				</div>
+												
+				<div class="col-12 d-flex justify-content-center">
+					<a th:href="@{/pessoa/index}">Cancelar</a>
+					<button class="btn btn-primary-2" type="submit"  value="Salvar">Salvar Pessoa</button>
+				</div>
+				
+			</form>
+			
+		</div>
+						
+	</body>
+	
+</html>

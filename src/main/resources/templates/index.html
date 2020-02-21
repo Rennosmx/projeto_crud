@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org" 
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>Pessoas</title>
+	</head>
+	
+	<body>
+		
+		<a th:href="@{'/pessoa/form'}">Cadastrar Pessoa</a>
+		
+		<div>
+			<h2>
+				<span>Pessoas</span>
+			</h2>
+		</div>
+	
+		<div>
+	
+			<table>
+	
+				<thead>
+					<tr>
+						<th>NOME</th>
+						<th>IDADE</th>
+						<th>CPF</th>
+						<th>OPÇÕES</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="pessoa : ${pessoas}">
+						<td th:text="${pessoa.nome}"></td>
+						<td th:text="${pessoa.idade}"></td>
+						<td th:text="${pessoa.cpf}"></td>
+						<td>
+							<a title="Editar"  th:href="@{'/pessoa/'+${pessoa.id}+'/editar'}">Editar</a> 
+							<a title="Excluir" th:href="@{'/pessoa/'+${pessoa.id}+'/remover'}">Excluir</a>
+						</td>
+					</tr>
+				</tbody>
+	
+			</table>
+	
+		</div>
+	
+	</body>
+
+</html>
