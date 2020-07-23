@@ -26,17 +26,13 @@
 	
 				<thead>
 					<tr>
-						<th>NOME</th>
-						<th>IDADE</th>
-						<th>CPF</th>
+						<th>NOME</th>						
 						<th>OPÇÕES</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr th:each="pessoa : ${pessoas}">
-						<td th:text="${pessoa.nome}"></td>
-						<td th:text="${pessoa.idade}"></td>
-						<td th:text="${pessoa.cpf}"></td>
+						<td th:text="${pessoa.nome}"></td>						
 						<td>
 							<a title="Editar"  th:href="@{'/pessoa/'+${pessoa.id}+'/editar'}">Editar</a> 
 							<a title="Excluir" th:href="@{'/pessoa/'+${pessoa.id}+'/remover'}">Excluir</a>

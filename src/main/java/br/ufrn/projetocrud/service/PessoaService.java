@@ -15,8 +15,8 @@ public class PessoaService {
 	@Autowired
 	PessoaRepository pessoaRepository;	
 	
-	public void salvar(Pessoa pessoa) {
-		pessoaRepository.saveAndFlush(pessoa);
+	public Pessoa salvar(Pessoa pessoa) {
+		return pessoaRepository.saveAndFlush(pessoa);
 	}
 	
 	public List<Pessoa> findAll(){
